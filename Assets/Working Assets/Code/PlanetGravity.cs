@@ -10,5 +10,6 @@ public class PlanetGravity : MonoBehaviour {
 	void FixedUpdate() {
 		Vector2 gravityForce = transform.position - gravityCenter.position;
 		rigidbody2D.AddForce(-gravityForce * gravity);
+		
 	}
 }
