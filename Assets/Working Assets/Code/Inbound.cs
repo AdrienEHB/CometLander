@@ -27,7 +27,7 @@ public class Inbound : MonoBehaviour {
 		arrayOfInbounds = GameObject.FindGameObjectsWithTag("Inbound");
 		
 		if (arrayOfInbounds.Length != 10) {
-			GameObject inbound = GameObject.Instantiate(gameObject, new Vector3(x, y, 0), Quaternion.identity) as GameObject;
+			GameObject.Instantiate(gameObject, new Vector3(x, y, 0), Quaternion.identity);
 		}
 		
 	}
