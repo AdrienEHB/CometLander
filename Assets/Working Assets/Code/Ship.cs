@@ -9,6 +9,7 @@ public class Ship : MonoBehaviour {
 	public float gravity = 1;
 	public Camera cam;
 	public float camSensitivity = 0.5f;
+	public AudioClip engine;
 	// Use this for initialization
 	void Start () {
 		
@@ -26,11 +27,25 @@ public class Ship : MonoBehaviour {
 		if(Input.GetKey("left")){
 			this.rigidbody2D.AddRelativeForce(new Vector2(0, thrustpower));
 			this.rigidbody2D.AddTorque(-thrustrotation);
+			audio.PlayOneShot(engine);
+			audio.volume += 1 * Time.deltaTime * 2;
 			
 		}
-		if(Input.GetKey("right")){
-			this.rigidbody2D.AddRelativeForce(new Vector2(0, thrustpower));
-			this.rigidbody2D.AddTorque(thrustrotation);
+
+		if (Input.GetKey ("right")) {
+						this.rigidbody2D.AddRelativeForce (new Vector2 (0, thrustpower));
+						this.rigidbody2D.AddTorque (thrustrotation);
+						audio.PlayOneShot (engine);
+						audio.volume += 1 * Time.deltaTime * 2;
+
+				}
+		/*
+		if (Input.GetKeyUp ("right")) {
+						audio.volume = 0;
+		}*/
+
+		else {
+			audio.volume -= 1 * Time.deltaTime * 2;
 		}
 		
 		/*if (transform.position.x > gravityCenter.position.x){
