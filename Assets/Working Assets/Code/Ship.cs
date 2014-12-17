@@ -48,7 +48,7 @@ public class Ship : MonoBehaviour {
 			audio.volume -= 1 * Time.deltaTime * 2;
 		}
 		
-		/*if (transform.position.x > gravityCenter.position.x){
+		if (transform.position.x > gravityCenter.position.x){
 			rigidbody2D.AddForce(new Vector2(-gravity,0));
 		} else {
 			rigidbody2D.AddForce(new Vector2(gravity,0));
@@ -58,7 +58,7 @@ public class Ship : MonoBehaviour {
 			rigidbody2D.AddForce(new Vector2(0,-gravity));
 		} else {
 			rigidbody2D.AddForce(new Vector2(0,gravity));
-   		}*/
+   		}
 		
 		Vector2 gravityForce = transform.position - gravityCenter.position;
 		rigidbody2D.AddForce(-gravityForce * gravity);

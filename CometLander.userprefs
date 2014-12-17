@@ -1,8 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Working Assets/Code/Ship.cs">
     <Files>
-      <File FileName="Assets/Working Assets/Code/Ship.cs" Line="43" Column="23" />
+      <File FileName="Assets/Working Assets/Code/Ship.cs" Line="33" Column="4" />
+      <File FileName="Assets/Working Assets/Code/Ship.cs" Line="56" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
