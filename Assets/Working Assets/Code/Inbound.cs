@@ -3,8 +3,8 @@ using System.Collections;
 
 public class Inbound : MonoBehaviour {
 
-	public float x;
-	public float y;
+	private float x;
+	private float y;
 	
 	private GameObject[] arrayOfInbounds;
 	private Object inbound;
@@ -21,14 +21,18 @@ public class Inbound : MonoBehaviour {
 	
 	void FixedUpdate() {
 		
-		x = Random.Range(-1000, 1000);
-		y = Random.Range(-1000, 1000);
+		x = Random.Range(Random.Range(-1000, -200), Random.Range(200, 1000));
+		y = Random.Range(Random.Range(-1000, -200), Random.Range(200, 1000));
 		
 		arrayOfInbounds = GameObject.FindGameObjectsWithTag("Inbound");
 		
 		if (arrayOfInbounds.Length != 10) {
 			GameObject.Instantiate(gameObject, new Vector3(x, y, 0), Quaternion.identity);
 		}
+		
+		foreach (GameObject thisInbound in arrayOfInbounds) {
+			thisInbound.rigidbody2D.velocity = new Vector2(Mathf.Clamp(thisInbound.rigidbody2D.velocity.x,-10,10), Mathf.Clamp(thisInbound.rigidbody2D.velocity.y,-10,10));
+		} 
 		
 	}
 	
